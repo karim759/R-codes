@@ -1,0 +1,19 @@
+# Load the data
+data(mtcars)
+
+# Perform simple linear regression
+model <- lm(mpg ~ wt, data = mtcars)
+
+# Summarize the model
+summary(model)
+
+# Extract the regression coefficients
+coef(model)
+
+# Predict mpg for a car with wt = 3
+new_data <- data.frame(wt = 3)
+predict(model, new_data)
+
+# Plot the data and regression line
+plot(mtcars$wt, mtcars$mpg)
+abline(model)

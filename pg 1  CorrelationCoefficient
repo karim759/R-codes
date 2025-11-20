@@ -1,0 +1,18 @@
+# Load the data
+data(mtcars)
+
+# Calculate the correlation coefficient
+cor(mtcars$mpg, mtcars$wt)
+
+# Calculate the correlation matrix
+cor(mtcars[, c("mpg", "wt", "hp")])
+
+# Visualize the correlation matrix
+library(corrplot)
+corrplot(cor(mtcars[, c("mpg", "wt", "hp")]))
+
+# Calculate Pearson's correlation coefficient
+cor(mtcars$mpg, mtcars$wt, method = "pearson")
+
+# Calculate Spearman's rank correlation coefficient
+cor(mtcars$mpg, mtcars$wt, method = "spearman")

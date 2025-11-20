@@ -1,0 +1,32 @@
+# Linear Regression (Straight Line)
+x <- 1:10
+y <- 2 * x + rnorm(10, mean = 0, sd = 1)
+
+# Fit a linear model
+model <- lm(y ~ x)
+
+# Plot the data and fitted line
+plot(x, y)
+abline(model)
+
+# Nonlinear Regression (Polynomial Curve)
+x <- 1:10
+y <- 2 * x^2 + 3 * x + rnorm(10, mean = 0, sd = 10)
+
+# Fit a quadratic model
+model <- lm(y ~ x + I(x^2))
+
+# Plot the data and fitted curve
+plot(x, y)
+lines(x, predict(model))
+
+# Nonlinear Regression (Exponential Curve)
+x <- 1:10
+y <- 2 * exp(0.5 * x) + rnorm(10, mean = 0, sd = 10)
+
+# Fit an exponential model
+model <- nls(y ~ a * exp(b * x), start = list(a = 1, b = 0.5))
+
+# Plot the data and fitted curve
+plot(x, y)
+lines(x, predict(model))

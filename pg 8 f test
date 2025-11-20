@@ -1,0 +1,16 @@
+# F-test for equality of variances
+# Let's test the hypothesis that the variances of two populations are equal
+set.seed(123)
+sample1 <- rnorm(100, mean = 5, sd = 1)
+sample2 <- rnorm(100, mean = 5.5, sd = 1.2)
+var_test_result <- var.test(sample1, sample2)
+print(var_test_result)
+
+# F-test for regression model
+# Let's test the hypothesis that a regression model is significant
+set.seed(123)
+x <- rnorm(100, mean = 0, sd = 1)
+y <- 2 * x + rnorm(100, mean = 0, sd = 1)
+model <- lm(y ~ x)
+anova_result <- anova(model)
+print(anova_result)

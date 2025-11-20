@@ -1,0 +1,22 @@
+# One-sample t-test
+# Let's test the hypothesis that the mean of a population is equal to 5
+set.seed(123)
+sample_data <- rnorm(100, mean = 5.2, sd = 1)
+t_test_result <- t.test(sample_data, mu = 5)
+print(t_test_result)
+
+# Two-sample t-test (independent samples)
+# Let's test the hypothesis that the means of two populations are equal
+set.seed(123)
+sample1 <- rnorm(100, mean = 5, sd = 1)
+sample2 <- rnorm(100, mean = 5.5, sd = 1)
+t_test_result <- t.test(sample1, sample2)
+print(t_test_result)
+
+# Paired t-test (dependent samples)
+# Let's test the hypothesis that the mean difference between paired observations is zero
+set.seed(123)
+before <- rnorm(100, mean = 5, sd = 1)
+after <- before + rnorm(100, mean = 0.5, sd = 1)
+t_test_result <- t.test(before, after, paired = TRUE)
+print(t_test_result)

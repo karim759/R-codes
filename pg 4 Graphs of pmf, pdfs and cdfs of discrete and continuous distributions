@@ -1,0 +1,21 @@
+# PMF
+x <- 0:10
+y <- dbinom(x, size = 10, prob = 0.5)
+plot(x, y, type = "h", main = "Binomial Distribution PMF", xlab = "x", ylab = "Probability")
+
+# CDF
+x <- 0:10
+y <- pbinom(x, size = 10, prob = 0.5)
+plot(x, y, type = "s", main = "Binomial Distribution CDF", xlab = "x", ylab = "Cumulative Probability")
+
+
+
+# PDF
+x <- seq(-3, 3, by = 0.1)
+y <- dnorm(x, mean = 0, sd = 1)
+plot(x, y, type = "l", main = "Normal Distribution PDF", xlab = "x", ylab = "Density")
+
+# CDF
+x <- seq(-3, 3, by = 0.1)
+y <- pnorm(x, mean = 0, sd = 1)
+plot(x, y, type = "l", main = "Normal Distribution CDF", xlab = "x", ylab = "Cumulative Probability")

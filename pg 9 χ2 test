@@ -1,0 +1,18 @@
+# Chi-squared test for independence
+# Let's test the hypothesis that two categorical variables are independent
+set.seed(123)
+data <- matrix(c(20, 10, 15, 25), nrow = 2, byrow = TRUE)
+colnames(data) <- c("Success", "Failure")
+rownames(data) <- c("Group A", "Group B")
+print(data)
+
+chi_squared_test_result <- chisq.test(data)
+print(chi_squared_test_result)
+
+# Chi-squared test for goodness of fit
+# Let's test the hypothesis that observed frequencies follow a specific distribution
+set.seed(123)
+observed_frequencies <- c(20, 30, 50)
+expected_frequencies <- c(25, 25, 50)
+chi_squared_test_result <- chisq.test(observed_frequencies, p = expected_frequencies / sum(expected_frequencies))
+print(chi_squared_test_result)
